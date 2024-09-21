@@ -64,6 +64,58 @@ function takeCommand(message) {
         speak("opening whatsapp ")
         window.open("whatsapp://send?text=Hello");
     }
+
+    else if (message.includes("camera")) {
+        speak("Opening camera");
+    
+        // Create a video element to display the camera feed
+        const video = document.createElement('video');
+        video.autoplay = true;
+        document.body.appendChild(video);
+    
+        // Create a canvas element to capture the image
+        const canvas = document.createElement('canvas');
+        document.body.appendChild(canvas);
+        
+        // Create a button to take a photo
+        const button = document.createElement('button');
+        button.innerText = "Take Photo";
+        document.body.appendChild(button);
+    
+        // Request access to the camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                // Set the video source to the camera stream
+                video.srcObject = stream;
+    
+                // When the button is clicked, capture the image
+                button.onclick = () => {
+                    // Set canvas dimensions to video dimensions
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+    
+                    // Draw the video frame onto the canvas
+                    const context = canvas.getContext('2d');
+                    context.drawImage(video, 0, 0);
+    
+                    // Optionally, convert the canvas to a data URL
+                    const photoData = canvas.toDataURL('image/png');
+                    console.log('Photo taken:', photoData); // You can use this data URL as needed
+    
+                    // Stop the video stream
+                    stream.getTracks().forEach(track => track.stop());
+                    video.remove(); // Remove the video element
+                    button.remove(); // Remove the button
+                };
+            })
+            .catch((error) => {
+                console.error("Error accessing the camera:", error);
+                speak("Unable to access the camera.");
+            });
+    }
+    
+    
+    
     else if (message.includes("time")) {
         let time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" })
         speak(time)
