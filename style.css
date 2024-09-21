@@ -131,7 +131,7 @@ video {
 canvas {
     display: none; /* Hide the canvas */
 }
-button {
+button{
     padding: 10px 15px;
     border: none;
     border-radius: 5px;

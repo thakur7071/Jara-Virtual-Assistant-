@@ -64,7 +64,7 @@ function takeCommand(message) {
         speak("opening whatsapp ")
         window.open("whatsapp://send?text=Hello");
     }
-   
+
     else if (message.includes("camera")) {
         speak("Opening camera");
     
@@ -76,7 +76,7 @@ function takeCommand(message) {
         // Create a canvas element to capture the image
         const canvas = document.createElement('canvas');
         document.body.appendChild(canvas);
-        
+    
         // Create a button to take a photo
         const button = document.createElement('button');
         button.innerText = "Take Photo";
@@ -86,11 +86,13 @@ function takeCommand(message) {
         const downloadLink = document.createElement('a');
         downloadLink.innerText = "Download Photo";
         downloadLink.style.display = 'none'; // Initially hide the link
+        downloadLink.style.marginTop = '10px'; // Spacing for the download link
         document.body.appendChild(downloadLink);
     
         // Create an image element to display the captured photo
         const capturedImage = document.createElement('img');
         capturedImage.style.display = 'none'; // Initially hide the image
+        capturedImage.style.marginTop = '10px'; // Spacing for the image
         document.body.appendChild(capturedImage);
     
         // Request access to the camera
@@ -134,10 +136,11 @@ function takeCommand(message) {
             });
     }
     
-   
-    
-    
-    
+
+
+
+
+
     else if (message.includes("time")) {
         let time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" })
         speak(time)
