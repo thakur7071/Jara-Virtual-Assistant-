@@ -19,32 +19,27 @@ body {
 
 #logo {
     width: 20vw;
-   
 }
 
 h1 {
     font-family: "Protest Guerrilla", sans-serif;
-    color: rgba(255, 255, 255, 0.9); /* Soft white color */
+    color: rgba(255, 255, 255, 0.9);
     text-align: center;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* More prominent shadow */
-    font-size: 48px; /* Base font size */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-size: 48px;
 }
 
 #name {
-    color: rgb(255, 105, 180); /* Updated to a brighter pink */
-    font-size: 55px;
-    transition: color 0.3s; /* Smooth color transition */
-}
-
-
-
-#virtual-assistant {
-    color: rgb(64, 224, 208); /* Updated to a brighter cyan */
+    color: rgb(255, 105, 180);
     font-size: 55px;
     transition: color 0.3s;
 }
 
-
+#virtual-assistant {
+    color: rgb(64, 224, 208);
+    font-size: 55px;
+    transition: color 0.3s;
+}
 
 #voice {
     width: 150px;
@@ -53,7 +48,7 @@ h1 {
 
 #btn {
     width: 30%;
-    background: linear-gradient(to right, rgb(30, 144, 255), rgb(0, 191, 255)); /* Gradient background */
+    background: linear-gradient(to right, rgb(30, 144, 255), rgb(0, 191, 255));
     padding: 12px 16px;
     display: flex;
     align-items: center;
@@ -63,14 +58,14 @@ h1 {
     border-radius: 30px;
     color: white;
     border: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 #btn:hover {
-    background: linear-gradient(to right, rgb(0, 102, 204), rgb(0, 140, 255)); /* Darker gradient on hover */
-    transform: translateY(-3px); /* Slight lift on hover */
+    background: linear-gradient(to right, rgb(0, 102, 204), rgb(0, 140, 255));
+    transform: translateY(-3px);
 }
 
 /* Media Queries for Responsiveness */
@@ -80,7 +75,7 @@ h1 {
     }
 
     h1 {
-        font-size: 40px; /* Adjusted for tablets */
+        font-size: 40px;
     }
 
     #name,
@@ -100,7 +95,7 @@ h1 {
     }
 
     h1 {
-        font-size: 30px; /* Smaller font size for mobile */
+        font-size: 30px;
     }
 
     #name,
@@ -111,27 +106,28 @@ h1 {
     #btn {
         width: 70%;
         font-size: 16px;
-        padding: 8px; /* Adjust padding for better touch targets */
+        padding: 8px;
     }
 
     #voice {
-        width: 100px; /* Smaller voice image for mobile */
+        width: 100px;
     }
 }
 
-
-
+/* Styles for camera elements */
 video {
     border: 2px solid #333;
     border-radius: 8px;
     width: 100%;
-    max-width: 90%; /* Responsive width */
+    max-width: 90%;
     margin-bottom: 10px;
 }
+
 canvas {
     display: none; /* Hide the canvas */
 }
-button{
+
+button {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -144,12 +140,48 @@ button{
     width: 100%; /* Full width on small screens */
     max-width: 200px; /* Limit width on larger screens */
 }
+
 button:hover {
     background-color: #218838;
 }
+
 a {
     text-decoration: none;
     color: #007bff;
     display: none; /* Hide until image is captured */
     margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgba(0, 123, 255, 0.1); /* Light background */
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: rgba(0, 123, 255, 0.2); /* Slightly darker on hover */
+}
+
+
+/* CSS for captured image */
+#capturedImage {
+    width: 100%; /* Full width */
+    max-width: 90%; /* Maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid #ccc; /* Optional: border for better visibility */
+    border-radius: 8px; /* Optional: rounded corners */
+    margin-top: 10px; /* Spacing from other elements */
+    display: block; /* Make sure it's displayed as block */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: shadow for depth */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    #capturedImage {
+        max-width: 80%; /* Adjust for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    #capturedImage {
+        max-width: 70%; /* Adjust for mobile */
+    }
 }

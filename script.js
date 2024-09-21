@@ -91,6 +91,7 @@ function takeCommand(message) {
     
         // Create an image element to display the captured photo
         const capturedImage = document.createElement('img');
+        capturedImage.id = "capturedImage"; // Added ID for styling
         capturedImage.style.display = 'none'; // Initially hide the image
         capturedImage.style.marginTop = '10px'; // Spacing for the image
         document.body.appendChild(capturedImage);
