@@ -64,6 +64,7 @@ function takeCommand(message) {
         speak("opening whatsapp ")
         window.open("whatsapp://send?text=Hello");
     }
+   
     else if (message.includes("camera")) {
         speak("Opening camera");
     
@@ -87,6 +88,11 @@ function takeCommand(message) {
         downloadLink.style.display = 'none'; // Initially hide the link
         document.body.appendChild(downloadLink);
     
+        // Create an image element to display the captured photo
+        const capturedImage = document.createElement('img');
+        capturedImage.style.display = 'none'; // Initially hide the image
+        document.body.appendChild(capturedImage);
+    
         // Request access to the camera
         navigator.mediaDevices.getUserMedia({ video: true })
             .then((stream) => {
@@ -107,11 +113,14 @@ function takeCommand(message) {
                     const photoData = canvas.toDataURL('image/png');
                     console.log('Photo taken:', photoData); // Log the data URL
     
+                    // Set the captured image source
+                    capturedImage.src = photoData;
+                    capturedImage.style.display = 'block'; // Show the captured image
+    
                     // Set the download link
                     downloadLink.href = photoData;
                     downloadLink.download = 'captured_photo.png'; // Specify the filename
                     downloadLink.style.display = 'block'; // Show the download link
-                    downloadLink.click(); // Automatically click the link to download
     
                     // Stop the video stream
                     stream.getTracks().forEach(track => track.stop());

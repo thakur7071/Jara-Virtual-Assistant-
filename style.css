@@ -125,7 +125,7 @@ video {
     border: 2px solid #333;
     border-radius: 8px;
     width: 100%;
-    max-width: 400px;
+    max-width: 90%; /* Responsive width */
     margin-bottom: 10px;
 }
 canvas {
@@ -140,6 +140,9 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-bottom: 10px;
+    transition: background-color 0.3s;
+    width: 100%; /* Full width on small screens */
+    max-width: 200px; /* Limit width on larger screens */
 }
 button:hover {
     background-color: #218838;
@@ -147,4 +150,6 @@ button:hover {
 a {
     text-decoration: none;
     color: #007bff;
+    display: none; /* Hide until image is captured */
+    margin-top: 10px;
 }
