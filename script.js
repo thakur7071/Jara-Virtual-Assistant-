@@ -62,9 +62,18 @@ function takeCommand(message) {
     }
 
     else if (message.includes("open calculator")) {
-        speak("opening calculator")
-        window.open("calculator://")
+        speak("opening calculator");
+        
+        // Check if on mobile
+        if (navigator.userAgent.includes("Mobile")) {
+            // Attempt to open the native calculator app (may not work on all devices)
+            window.open("calculator://");
+        }  else {
+            // For laptops/desktops, also open a web-based calculator
+            window.open("https://www.calculator.com/");
+        }
     }
+    
     else if (message.includes("open whatsapp")) {
         speak("opening whatsapp")
         window.open("whatsapp://send?text=Hello");
