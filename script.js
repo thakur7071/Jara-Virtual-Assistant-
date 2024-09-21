@@ -28,6 +28,17 @@ function speak(text) {
 // })
 
 
+// Dummy function to simulate fetching a phone number based on contact name
+function getPhoneNumber(contactName) {
+    const contacts = {
+        "John Doe": "+1234567890",
+        "Jane Smith": "+0987654321",
+        // Add more contacts as needed
+    };
+    return contacts[contactName] || null; // Return the number or null if not found
+}
+
+
 let speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 let recognition = new speechRecognition()
 recognition.onresult = (event) => {
@@ -64,6 +75,22 @@ function takeCommand(message) {
         speak("opening whatsapp ")
         window.open("whatsapp://send?text=Hello");
     }
+
+    else if (message.includes("contact")) {
+        speak("Please tell me the name of the contact you want to call.");
+    } else if (message.includes("call")) {
+        // Extract the contact name and number from the message
+        const contactMatch = message.match(/call (.+)/); // Example: "call John Doe"
+        const phoneNumber = getPhoneNumber(contactMatch[1]); // Custom function to get number
+    
+        if (phoneNumber) {
+            speak(`Calling ${contactMatch[1]}`);
+            window.open(`tel:${phoneNumber}`);
+        } else {
+            speak("Sorry, I couldn't find that contact.");
+        }
+    }
+  
 
     else if (message.includes("camera")) {
         speak("Opening camera");
