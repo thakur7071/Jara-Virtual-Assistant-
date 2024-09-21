@@ -2,14 +2,14 @@
 
 * {
     margin: 0;
-    padding: 0; /* Changed to zero to ensure consistency */
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     width: 100%;
-    height: 100vh; /* Changed to ensure full viewport height */
-    background-color: black;
+    height: 100vh;
+    background: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,23 +19,32 @@ body {
 
 #logo {
     width: 20vw;
+   
 }
 
 h1 {
     font-family: "Protest Guerrilla", sans-serif;
-    color: rgb(222, 218, 218);
-    text-align: center; /* Centering the text */
+    color: rgba(255, 255, 255, 0.9); /* Soft white color */
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* More prominent shadow */
+    font-size: 48px; /* Base font size */
 }
 
 #name {
-    color: rgb(212, 43, 122);
-    font-size: 45px;
+    color: rgb(255, 105, 180); /* Updated to a brighter pink */
+    font-size: 55px;
+    transition: color 0.3s; /* Smooth color transition */
 }
 
+
+
 #virtual-assistant {
-    color: rgb(43, 206, 212);
-    font-size: 45px;
+    color: rgb(64, 224, 208); /* Updated to a brighter cyan */
+    font-size: 55px;
+    transition: color 0.3s;
 }
+
+
 
 #voice {
     width: 150px;
@@ -44,63 +53,64 @@ h1 {
 
 #btn {
     width: 30%;
-    background: linear-gradient(to right, rgb(21, 145, 207), rgb(201, 41, 116));
-    padding: 10px;
+    background: linear-gradient(to right, rgb(30, 144, 255), rgb(0, 191, 255)); /* Gradient background */
+    padding: 12px 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     font-size: 20px;
-    border-radius: 20px;
+    border-radius: 30px;
     color: white;
-    box-shadow: 2px 2px 10px rgb(21, 145, 207), 2px 2px 10px rgb(201, 41, 116);
     border: none;
-    transition: all 0.5s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
 #btn:hover {
-    box-shadow: 2px 2px 20px rgb(21, 145, 207), 2px 2px 20px rgb(201, 41, 116);
+    background: linear-gradient(to right, rgb(0, 102, 204), rgb(0, 140, 255)); /* Darker gradient on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     #logo {
-        width: 40vw; /* Adjust logo size for tablets */
+        width: 40vw;
     }
 
     h1 {
-        font-size: 35px; /* Smaller font size for tablets */
+        font-size: 40px; /* Adjusted for tablets */
     }
 
     #name,
     #virtual-assistant {
-        font-size: 35px; /* Smaller font size for tablets */
+        font-size: 40px;
     }
 
     #btn {
-        width: 50%; /* Wider button on tablets */
-        font-size: 18px; /* Slightly smaller font size for button */
+        width: 50%;
+        font-size: 18px;
     }
 }
 
 @media (max-width: 480px) {
     #logo {
-        width: 60vw; /* Adjust logo size for mobile */
+        width: 60vw;
     }
 
     h1 {
-        font-size: 28px; /* Smaller font size for mobile */
+        font-size: 30px; /* Smaller font size for mobile */
     }
 
     #name,
     #virtual-assistant {
-        font-size: 28px; /* Smaller font size for mobile */
+        font-size: 30px;
     }
 
     #btn {
-        width: 70%; /* Wider button on mobile */
-        font-size: 16px; /* Smaller font size for button */
+        width: 70%;
+        font-size: 16px;
         padding: 8px; /* Adjust padding for better touch targets */
     }
 
