@@ -60,8 +60,12 @@ function takeCommand(message) {
         speak("opening google")
         window.open("https://www.google.co.in/")
     }
-
-    else if (message.includes("open whatsapp")) {
+    else if (message.includes("open linkedin")) {
+        speak("opening LinkedIn");
+        window.open("linkedin://");
+    }
+    
+    else if (message.includes("open whatsapp send this helo message to someone whom you want to talk")) {
         speak("opening whatsapp")
         window.open("whatsapp://send?text=Hello");
     }
