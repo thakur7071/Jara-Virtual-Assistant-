@@ -50,7 +50,7 @@ function takeCommand(message) {
         speak("hello sir, what can i help you?")
     }
     else if (message.includes("who are you")) {
-        speak("i am jarvis, created by Naveen Sir")
+        speak("i am jara, created by Naveen Sir")
     }
     else if (message.includes("open youtube")) {
         speak("opening youtube")
@@ -79,9 +79,9 @@ function takeCommand(message) {
         speak(date)
     }
     else {
-        let finalText = "this is what i found on internet regarding" + message.replace("jarvis", "")
+        let finalText = "this is what i found on internet regarding" + message.replace("jara", "")
         speak(finalText)
-        window.open(`https://www.google.co.in/search?q=${message.replace("jarvis", "")}`, "_blank")
+        window.open(`https://www.google.co.in/search?q=${message.replace("jara", "")}`, "_blank")
     }
 
 }
