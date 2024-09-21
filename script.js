@@ -61,10 +61,6 @@ function takeCommand(message) {
         window.open("https://www.google.co.in/")
     }
 
-    else if (message.includes("open calculator")) {
-        speak("opening calculator")
-        window.open("calculator://")
-    }
     else if (message.includes("open whatsapp")) {
         speak("opening whatsapp")
         window.open("whatsapp://send?text=Hello");
