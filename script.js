@@ -31,8 +31,7 @@ function speak(text) {
 // Dummy function to simulate fetching a phone number based on contact name
 function getPhoneNumber(contactName) {
     const contacts = {
-        "John Doe": "+1234567890",
-        "Jane Smith": "+0987654321",
+        "Aatesh Kumar Singh": "+919839660325",
         // Add more contacts as needed
     };
     return contacts[contactName] || null; // Return the number or null if not found
