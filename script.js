@@ -60,7 +60,6 @@ function takeCommand(message) {
         speak("opening google")
         window.open("https://www.google.co.in/")
     }
-
     else if (message.includes("open whatsapp")) {
         speak("opening whatsapp")
         window.open("whatsapp://send?text=Hello");
