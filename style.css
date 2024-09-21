@@ -118,3 +118,33 @@ h1 {
         width: 100px; /* Smaller voice image for mobile */
     }
 }
+
+
+
+video {
+    border: 2px solid #333;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+canvas {
+    display: none; /* Hide the canvas */
+}
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+button:hover {
+    background-color: #218838;
+}
+a {
+    text-decoration: none;
+    color: #007bff;
+}
