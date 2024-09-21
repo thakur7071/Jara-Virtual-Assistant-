@@ -66,11 +66,9 @@ function takeCommand(message) {
         window.open("calculator://")
     }
     else if (message.includes("open whatsapp")) {
-        speak("opening whatsapp");
-        // Attempt to open WhatsApp
+        speak("opening whatsapp")
         window.open("whatsapp://send?text=Hello");
     }
-    
     else if (message.includes("time")) {
         let time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" })
         speak(time)
@@ -81,9 +79,9 @@ function takeCommand(message) {
         speak(date)
     }
     else {
-        let finalText = "this is what i found on internet regarding" + message.replace("Jara", "")
+        let finalText = "this is what i found on internet regarding" + message.replace("jarvis", "")
         speak(finalText)
-        window.open(`https://www.google.co.in/search?q=${message.replace("Jara", "")}`, "_blank")
+        window.open(`https://www.google.co.in/search?q=${message.replace("jarvis", "")}`, "_blank")
     }
 
 }
