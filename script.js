@@ -65,8 +65,8 @@ function takeCommand(message) {
         window.open("linkedin://");
     }
     
-    else if (message.includes("open whatsapp send this helo message to someone whom you want to talk")) {
-        speak("opening whatsapp")
+    else if (message.includes("open whatsapp ")) {
+        speak("opening whatsapp send this helo message to someone whom you want to talk")
         window.open("whatsapp://send?text=Hello");
     }
     else if (message.includes("time")) {
