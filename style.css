@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+
+* {
+    margin: 0;
+    padding: 0; /* Changed to zero to ensure consistency */
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh; /* Changed to ensure full viewport height */
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#logo {
+    width: 20vw;
+}
+
+h1 {
+    font-family: "Protest Guerrilla", sans-serif;
+    color: rgb(222, 218, 218);
+    text-align: center; /* Centering the text */
+}
+
+#name {
+    color: rgb(212, 43, 122);
+    font-size: 45px;
+}
+
+#virtual-assistant {
+    color: rgb(43, 206, 212);
+    font-size: 45px;
+}
+
+#voice {
+    width: 150px;
+    display: none;
+}
+
+#btn {
+    width: 30%;
+    background: linear-gradient(to right, rgb(21, 145, 207), rgb(201, 41, 116));
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 2px 2px 10px rgb(21, 145, 207), 2px 2px 10px rgb(201, 41, 116);
+    border: none;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+#btn:hover {
+    box-shadow: 2px 2px 20px rgb(21, 145, 207), 2px 2px 20px rgb(201, 41, 116);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #logo {
+        width: 40vw; /* Adjust logo size for tablets */
+    }
+
+    h1 {
+        font-size: 35px; /* Smaller font size for tablets */
+    }
+
+    #name,
+    #virtual-assistant {
+        font-size: 35px; /* Smaller font size for tablets */
+    }
+
+    #btn {
+        width: 50%; /* Wider button on tablets */
+        font-size: 18px; /* Slightly smaller font size for button */
+    }
+}
+
+@media (max-width: 480px) {
+    #logo {
+        width: 60vw; /* Adjust logo size for mobile */
+    }
+
+    h1 {
+        font-size: 28px; /* Smaller font size for mobile */
+    }
+
+    #name,
+    #virtual-assistant {
+        font-size: 28px; /* Smaller font size for mobile */
+    }
+
+    #btn {
+        width: 70%; /* Wider button on mobile */
+        font-size: 16px; /* Smaller font size for button */
+        padding: 8px; /* Adjust padding for better touch targets */
+    }
+
+    #voice {
+        width: 100px; /* Smaller voice image for mobile */
+    }
+}
