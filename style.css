@@ -71,7 +71,7 @@ h1 {
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     #logo {
-        width: 40vw;
+        width: 60vw;
     }
 
     h1 {
@@ -91,7 +91,7 @@ h1 {
 
 @media (max-width: 480px) {
     #logo {
-        width: 60vw;
+        width: 100vw;
     }
 
     h1 {
