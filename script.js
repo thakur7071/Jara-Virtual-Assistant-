@@ -80,6 +80,13 @@ function takeCommand(message) {
         }
     }
     
+    else if (message.includes("open contact")) {
+        speak("Opening your contacts. Please choose a contact to call.");
+        
+        // Open the contacts app using a URL scheme (this may work on mobile devices)
+        window.open("tel:");
+    }
+    
     
     
     else if (message.includes("time")) {
