@@ -61,10 +61,26 @@ function takeCommand(message) {
         speak("opening google")
         window.open("https://www.google.co.in/")
     }
-    else if (message.includes("whatsapp")) {
-        speak("opening whatsapp ")
-        window.open("whatsapp://send?text=Hello");
+    else if (message.includes("open whatsapp")){
+        const contacts = {
+            aatish: "9839660325",
+            anubhav: "918076649082",
+            suraj: "918009139813"
+            // Add more contacts as needed
+        };
+    
+        const name = message.split("call ")[1]; // Extract the name after "call "
+        const phoneNumber = contacts[name.toLowerCase()]; // Get the phone number
+    
+        if (phoneNumber) {
+            speak(`okay sir i got it  calling ${name} on WhatsApp`);
+            window.open(`whatsapp://call?phone=${phoneNumber}`);
+        } else {
+            speak("Sorry, I don't have that contact.");
+        }
     }
+    
+    
     
     else if (message.includes("time")) {
         let time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" })
