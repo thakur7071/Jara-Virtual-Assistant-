@@ -30,7 +30,7 @@ function speak(text) {
 // Example function to simulate retrieving a contact's number
 function getContactNumber(name) {
     const contacts = {
-        "Alice": "+12345678901",
+        "Suraj": "+918009139813",
         "Bob": "+10987654321"
     };
     
