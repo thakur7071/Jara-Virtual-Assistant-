@@ -27,15 +27,7 @@ function speak(text) {
 //     wishMe()
 // })
 
-// Example function to simulate retrieving a contact's number
-function getContactNumber(name) {
-    const contacts = {
-        "Suraj": "+918009139813",
-        "Bob": "+10987654321"
-    };
-    
-    return contacts[name] || null;
-}
+
 
 let speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 let recognition = new speechRecognition()
@@ -76,21 +68,10 @@ function takeCommand(message) {
     
     
     else if (message.includes("open contact")) {
-        speak("Whom would you like to call?");
+        speak("Opening your contacts.");
         
-        // Prompt for the contact's name
-        const contactName = prompt("Please enter the name of the person you want to call:");
-        
-        // For the sake of this example, we'll use a static number
-        // In a real application, you'd need to look up the number based on the contact name
-        const contactNumber = getContactNumber(contactName); // Implement this function to return the number
-    
-        if (contactNumber) {
-            speak(`Calling ${contactName}.`);
-            window.open(`tel:${contactNumber}`);
-        } else {
-            speak("Sorry, I couldn't find that contact.");
-        }
+        // Open the contacts app using a URL scheme (this may work on mobile devices)
+        window.open("tel:");
     }
     
 
