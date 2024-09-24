@@ -1,8 +1,8 @@
 Virtual-Assistant
 Technologies used -
-HTML
-CSS
-Javascript
+1- HTML
+2- CSS
+3- Javascript
 Live Link - https://thakur7071.github.io/Jara-Virtual-Assistant-/
 
 Following Commands are added - 
