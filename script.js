@@ -47,7 +47,7 @@ btn.addEventListener("click", () => {
 function takeCommand(message) {
     btn.style.display = "flex"
     voice.style.display = "none"
-    if (message.includes("hello") || message.includes("jarvis")) {
+    if (message.includes("hello") || message.includes("jara")) {
         speak("hello sir, what can i help you?")
     }
     else if (message.includes("who are you")) {
